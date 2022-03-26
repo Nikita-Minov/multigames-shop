@@ -58,7 +58,7 @@ const Picture = styled.img`
   :hover {
     cursor: pointer;
   }
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     margin-bottom: 20px;
     width: 100%;
     max-height: 160px;

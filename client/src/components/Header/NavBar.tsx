@@ -35,7 +35,7 @@ const NavBarWrapper = styled.nav`
   height: 100%;
   justify-content: space-between;
   align-items: center;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     display: none;
   }
 `;

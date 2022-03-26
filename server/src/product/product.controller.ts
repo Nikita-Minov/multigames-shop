@@ -6,13 +6,10 @@ import {
   Request,
   ForbiddenException,
   Get,
-  Param,
-  Query,
-  UseInterceptors, UploadedFile, Put, Delete
+  Put,
 } from '@nestjs/common';
 import {AuthGuard} from "@nestjs/passport";
 import {ProductService} from "./product.service";
-import {FileInterceptor} from "@nestjs/platform-express";
 @Controller('/api/v1/products')
 export class ProductController {
   constructor(private productService: ProductService) {
@@ -75,15 +72,15 @@ export class ProductController {
   async addDataProduct(@Body('data') data, @Body('productId') productId) {
     return await this.productService.addDataProduct({data, productId});
   }
-
-  @UseGuards(AuthGuard('jwt'))
-  @Put()
-  async updateProduct(@Body('productName') productName,
-                      @Body('productPrice') productPrice,
-                      @Body('categoryId') categoryId,
-                      @Body('description') description,
-                      @Body('productId') productId) {
-    await this.productService.updateProduct({productPrice, description, productName, categoryId, productId});
-    return {statusCode: 200, message: 'Product updated!'}
-  }
+  //
+  // @UseGuards(AuthGuard('jwt'))
+  // @Put()
+  // async updateProduct(@Body('productName') productName,
+  //                     @Body('productPrice') productPrice,
+  //                     @Body('categoryId') categoryId,
+  //                     @Body('description') description,
+  //                     @Body('productId') productId) {
+  //   await this.productService.updateProduct({productPrice, description, productName, categoryId, productId});
+  //   return {statusCode: 200, message: 'Product updated!'}
+  // }
 }

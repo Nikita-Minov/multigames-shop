@@ -1,20 +1,10 @@
 /* eslint-disable no-unused-vars */
 import axios, {AxiosInstance} from 'axios';
+import {
+  AddCategory,
+  DeleteCategory,
+  GetCategory} from '../types/api/categoriesApi.types';
 /* eslint-enable no-unused-vars */
-
-interface GetCategory {
-  categoryId: number;
-}
-
-interface DeleteCategory {
-  categoryId: number;
-  token: string;
-}
-
-interface AddCategory {
-  categoryName: string;
-  token: string;
-}
 
 /* eslint-disable require-jsdoc */
 

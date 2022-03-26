@@ -29,7 +29,7 @@ const SocialLinksBarWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -49,7 +49,7 @@ const SocialLink = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     margin-top: 20px;
   }
 `;

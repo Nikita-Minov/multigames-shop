@@ -121,7 +121,7 @@ const FilterSectionWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     display: none;
   }
 `;
@@ -132,7 +132,7 @@ const FilterSectionWrapperMobile = styled.div`
   min-height: 100px;
   justify-content: space-between;
   flex-wrap: wrap;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     display: flex;
   }
 `;
@@ -145,7 +145,7 @@ const OpenFilterBlock = styled.div`
   align-items: center;
   margin-top: 30px;
   background: #1C1F29;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     margin-top: 10px;
     max-height: 50px;
     display: flex;
@@ -180,26 +180,33 @@ const FilterBlock = styled.div<FilterProps>`
   flex-wrap: wrap;
   padding-top: 20px;
   padding-right: 20px;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     margin-top: 0;
     border-radius: 0;
   }
 `;
 
 const FilterBlockInRow = styled(FilterBlock)`
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     width: 100%;
     flex-wrap: nowrap;
     border-radius: 0;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    justify-content: space-between;
   }
 `;
 
 const CustomFilterBlock = styled(FilterBlock)`
-  @media(max-width: 375px) {
-    padding-top: 0;
+  @media(max-width: 430px) {
     margin-top: 0;
     margin-bottom: 20px;
     border-radius: 0 0 15px 15px;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    justify-content: space-between;
   }
 `;
 
@@ -223,11 +230,12 @@ const FilterItem = styled.button<FilterItemProps>`
   opacity: 0.7;
   margin-bottom: 20px;
   margin-left: 20px;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     width: 130px;
     height: 50px;
     font-size: 10px;
     margin-bottom: 20px;
+    margin-left: 0;
   }
 `;
 

@@ -29,9 +29,9 @@ export class CategoryController {
     return this.categoryService.deleteCategory({categoryId});
   }
 
-  @UseGuards(AuthGuard('jwt'))
-  @Post('update-category')
-  async updateCategory(@Body('categoryId') categoryId, @Body('categoryName') categoryName) {
-    return this.categoryService.updateCategory({categoryId, categoryName});
-  }
+  // @UseGuards(AuthGuard('jwt'))
+  // @Post('update-category')
+  // async updateCategory(@Body('categoryId') categoryId, @Body('categoryName') categoryName) {
+  //   return this.categoryService.updateCategory({categoryId, categoryName});
+  // }
 }

@@ -80,7 +80,7 @@ const WindowPayField = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     width: 90%;
   }
 `;
@@ -91,7 +91,7 @@ const WindowPayText = styled.p`
   font-weight: 700;
   font-size: 16px;
   color: #FFFFFF;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     font-size: 13px;
   }
 `;
@@ -103,7 +103,7 @@ const WindowPayTextRegular = styled.p`
   line-height: 15px;
   color: #FFFFFF;
   opacity: 0.7;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     font-size: 10px;
   }
 `;
@@ -125,7 +125,7 @@ const WindowPayInput = styled(Field)`
 
 const WindowPayFieldForBtn = styled(WindowPayField)`
   height: 80px;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     height: 40px;
   }
 `;

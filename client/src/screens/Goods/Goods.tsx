@@ -52,7 +52,7 @@ const GoodsSection = styled.section`
   background-image:
           linear-gradient(to top, rgba(41,41,53,0.97), rgba(41,41,53,0.97)),
           url(${bg});
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     padding-top: 75px;
   }
 `;
@@ -64,7 +64,7 @@ const GoodsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     width: 90%;
   }
 `;
@@ -74,7 +74,7 @@ const CoverImg = styled.img`
   width: 100%;
   height: 240px;
   border-radius: 20px;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     display: none;
   }
 `;
@@ -86,7 +86,7 @@ const ProductSection = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     margin-top: 10px;
     background: #1A1C27;
     border-radius: 10px;
@@ -102,7 +102,7 @@ const HowToBuy = styled.a`
   border-radius: 10px;
   width: 100%;
   height: 80px;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     display: flex;
     flex-direction: column;
     align-items: center;

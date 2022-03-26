@@ -36,7 +36,7 @@ const AgreementSection = styled.section`
   background-image:
           linear-gradient(to top, rgba(41,41,53,0.97), rgba(41,41,53,0.97)),
           url(${bg});
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     padding-top: 75px;
   }
 `;
@@ -48,7 +48,7 @@ const AgreementWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     width: 90%;
   }
 `;
@@ -71,7 +71,7 @@ const AgreementTitle = styled.h1`
   font-size: 24px;
   color: #FFFFFF;
   margin-bottom: 50px;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     margin-bottom: 20px;
     margin-top: 30px;
     font-size: 16px;
@@ -88,7 +88,7 @@ const AgreementItem = styled.p`
   opacity: 0.7;
   text-align: center;
   margin-bottom: 10px;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     font-size: 14px;
   }
 `;

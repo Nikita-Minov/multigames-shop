@@ -91,11 +91,11 @@ export class ProductService {
     return {statusCode: 201, message: 'Product added successfully!'};
   }
 
-  async updateProduct({productName, description, productPrice, productId, categoryId}: UpdateProductDto) {
-    const product = await this.productRepository.findOne({where: {productId}});
-    if(!product) throw new NotFoundException('No product found with this ID!');
-    const foundCategory = await this.categoryRepository.findOne({where: {categoryId: categoryId}});
-    if(!foundCategory) throw new NotFoundException('This category does not exist!');
-    return await this.productRepository.update({productName, description, category: foundCategory.categoryName, productPrice, categoryId}, {where: {productId}});
-  }
+  // async updateProduct({productName, description, productPrice, productId, categoryId}: UpdateProductDto) {
+  //   const product = await this.productRepository.findOne({where: {productId}});
+  //   if(!product) throw new NotFoundException('No product found with this ID!');
+  //   const foundCategory = await this.categoryRepository.findOne({where: {categoryId: categoryId}});
+  //   if(!foundCategory) throw new NotFoundException('This category does not exist!');
+  //   return await this.productRepository.update({productName, description, category: foundCategory.categoryName, productPrice, categoryId}, {where: {productId}});
+  // }
 }

@@ -41,13 +41,13 @@ export class CategoryService {
     await this.categoryRepository.destroy({where: {categoryId}});
     return {statusCode: 200, message: 'Category deleted!'}
   }
-
-  async updateCategory({categoryId, categoryName}: UpdateCategoryDto) {
-    const category = await this.categoryRepository.findOne({where: {categoryId}});
-    if(!category) throw new NotFoundException('No category found!');
-    await this.categoryRepository.update({categoryName: categoryName}, {where: {categoryId}});
-    return {statusCode: 200, message: 'Category updated!'}
-  }
+  //
+  // async updateCategory({categoryId, categoryName}: UpdateCategoryDto) {
+  //   const category = await this.categoryRepository.findOne({where: {categoryId}});
+  //   if(!category) throw new NotFoundException('No category found!');
+  //   await this.categoryRepository.update({categoryName: categoryName}, {where: {categoryId}});
+  //   return {statusCode: 200, message: 'Category updated!'}
+  // }
 
   async getCategory({categoryId}: GetCategoryDto) {
     const category = await this.categoryRepository.findOne({where: {categoryId}});

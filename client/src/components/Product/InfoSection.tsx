@@ -12,6 +12,8 @@ const InfoSection = ({
   description,
   mappedPhotos,
 }: InfoSectionProps) => {
+  const newMappedPhotos: Array<JSX.Element> = Array.from(mappedPhotos);
+  newMappedPhotos.shift();
   return (
     <InfoSectionWrapper>
       <InfoSectionBlock>
@@ -23,7 +25,7 @@ const InfoSection = ({
         </InfoSectionDescription>
         <Slider slides={mappedPhotos}/>
         <PicturesBlockForMobile>
-          {mappedPhotos}
+          {newMappedPhotos}
         </PicturesBlockForMobile>
       </InfoSectionBlock>
     </InfoSectionWrapper>
@@ -39,7 +41,7 @@ const InfoSectionWrapper = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 15px 15px 0 0;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     margin-top: 0;
     border-radius: 0 0 15px 15px;
   }
@@ -50,7 +52,7 @@ const InfoSectionBlock = styled.div`
   flex-direction: column;
   width: 90%;
   height: 90%;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     align-items: center;
   }
 `;
@@ -60,7 +62,7 @@ const InfoSectionTitle = styled.h1`
   font-weight: 700;
   font-size: 16px;
   color: #FFFFFF;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     margin-top: 20px;
   }
 `;
@@ -71,7 +73,7 @@ const InfoSectionDescription = styled.p`
   font-weight: 400;
   font-size: 16px;
   color: #FFFFFF;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     text-align: center;
   }
 `;
@@ -84,7 +86,7 @@ const PicturesBlockForMobile = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 20px;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     display: flex;
   }
 `;

@@ -91,7 +91,7 @@ const SuccessPaySection = styled.section`
   background-image:
           linear-gradient(to top, rgba(41,41,53,0.97), rgba(41,41,53,0.97)),
           url(${bg});
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     padding-top: 75px;
   }
 `;
@@ -103,7 +103,7 @@ const SuccessPayWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     width: 100%;
   }
 `;
@@ -116,7 +116,7 @@ const SuccessPayBlockWrapper = styled.div`
   border-radius: 15px;
   display: flex;
   justify-content: center;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     margin-top: 50px;
     width: 90%;
     min-height: 500px;
@@ -130,7 +130,7 @@ const SuccessPayBlock = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     width: 100%;
     margin-top: 30px;
   }
@@ -143,7 +143,7 @@ const SuccessPayField = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     width: 85%;
   }
 `;
@@ -154,7 +154,7 @@ const SuccessPayText = styled.p`
   font-weight: 700;
   font-size: 16px;
   color: #FFFFFF;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     font-size: 12px;
   }
 `;
@@ -166,7 +166,7 @@ const SuccessPayTextRegular = styled.p`
   line-height: 15px;
   color: #FFFFFF;
   opacity: 0.7;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     font-size: 10px;
   }
 `;
@@ -184,7 +184,7 @@ const BackLink = styled(Link)`
   font-weight: 700;
   font-size: 14px;
   color: #FFFFFF;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     width: 150px;
     height: 40px;
   }

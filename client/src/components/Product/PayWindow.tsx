@@ -41,7 +41,7 @@ const WindowPay = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     width: 90%;
     left: 5%;
     top: 5%;

@@ -19,16 +19,18 @@ const Slider = ({slides}: SliderProps) => {
     setSliderIndex(sliderIndex+1);
     if (sliderIndex > slides.length-2) setSliderIndex(0);
   };
+  const newSlides: Array<JSX.Element> = Array.from(slides);
+  newSlides.shift();
   return (
     <PicturesBlock>
       <PictureBlock>
         <SliderButtonPrev onClick={PrevSlide}>
           <img src={prev} alt=""/>
         </SliderButtonPrev>
-        {slides[sliderIndex]}
+        {newSlides[sliderIndex]}
       </PictureBlock>
       <PictureBlock>
-        {slides[sliderIndex+1]}
+        {newSlides[sliderIndex+1]}
         <SliderButtonNext onClick={NextSlide}>
           <img src={next} alt=""/>
         </SliderButtonNext>
@@ -44,7 +46,7 @@ const PicturesBlock = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 20px;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     display: none;
   }
 `;
@@ -64,7 +66,7 @@ const SliderButtonPrev = styled.a`
   background: none;
   border: none;
   bottom: 40%;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     display: none;
   }
 `;
@@ -78,7 +80,7 @@ const SliderButtonNext = styled.a`
   }
   background: none;
   border: none;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     display: none;
   }
 `;

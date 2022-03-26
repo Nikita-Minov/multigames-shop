@@ -34,7 +34,7 @@ const ProductItemWrapper = styled(Link)<ProductItemWrapperProps>`
   outline: none;
   margin-bottom: 30px;
   text-decoration: none;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     width: 275px;
     height: 150px;
   }
@@ -56,7 +56,7 @@ const PriceField = styled.p`
   left: 230px;
   top: 10px;
   opacity: 0.95;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     left: 160px;
   }
 `;
@@ -76,7 +76,7 @@ const DescriptionField = styled.p`
   border-radius: 0 0 15px 15px;
   top: 125px;
   opacity: 0.95;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     top: 85px;
   }
 `;

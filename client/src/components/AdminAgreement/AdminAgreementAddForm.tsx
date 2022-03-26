@@ -40,6 +40,8 @@ const StyledForm = styled.form`
   justify-content: space-between;
   align-items: center;
   border: 2px solid #000000;
+  margin-bottom: 40px;
+  font-family: 'Roboto', sans-serif;
 `;
 
 const StyledInput = styled.input`

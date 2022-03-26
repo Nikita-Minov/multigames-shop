@@ -1,36 +1,12 @@
 /* eslint-disable no-unused-vars */
 import axios, {AxiosInstance} from 'axios';
+import {
+  AddData,
+  CreateProduct,
+  DeleteProduct,
+  GetProduct,
+} from '../types/api/productsApi.types';
 /* eslint-enable no-unused-vars */
-
-interface GetProduct {
-  productId: number;
-}
-
-interface DeleteProduct {
-  productId: number;
-  token: string;
-}
-
-interface CreateProduct {
-  productName: string;
-  productPrice: number;
-  data: {
-    accounts: Array<string>;
-  }
-  description: string;
-  photos: {
-    arr: Array<string>;
-  }
-  categoryId: number;
-  token: string;
-}
-
-interface AddData {
-  productId: number;
-  data: string;
-  token: string;
-}
-
 
 /* eslint-disable require-jsdoc */
 

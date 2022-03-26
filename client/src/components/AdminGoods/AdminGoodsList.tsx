@@ -24,31 +24,32 @@ const AdminGoodsList = ({products}: AdminGoodsListProps) => {
     <>
       {products?products.map((el, id) => {
         return (
-          <CategoryItem key={id}>
-            <ListItem>{el.productName}</ListItem>
-            <ListItem>{el.productPrice}</ListItem>
-            <ListItem>{el.category}</ListItem>
-            <ListItem>{el.inStock}</ListItem>
-            <ListItem>{el.sales}</ListItem>
+          <GoodsItem key={id}>
+            <ListItem>Название: {el.productName}</ListItem>
+            <ListItem>Цена: {el.productPrice}</ListItem>
+            <ListItem>Категория: {el.category}</ListItem>
+            <ListItem>В наличии: {el.inStock}</ListItem>
+            <ListItem>Продаж: {el.sales}</ListItem>
             <AdminCategoriesAddForm productId={el.productId}/>
             <button onClick={() => {
               delProduct(el.productId, cookies.token);
-            }}>Delete</button>
-          </CategoryItem>
+            }}>Удалить</button>
+          </GoodsItem>
         );
       }): <>Нет товаров</>}
     </>);
 };
 
-const CategoryItem = styled.div`
+const GoodsItem = styled.div`
   border: 2px solid #000000;
   border-radius: 15px;
   width: 80%;
-  height: 70px;
+  min-height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
 `;
 
 const ListItem = styled.p`

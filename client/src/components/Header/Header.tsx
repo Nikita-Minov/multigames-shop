@@ -52,7 +52,7 @@ const HeaderWrapper = styled.header`
   width: 100%;
   height: 100px;
   background-color: #1A1C27;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     height: 75px;
   }
 `;
@@ -64,21 +64,21 @@ const HeaderSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     justify-content: center;
   }
 `;
 
 const Logo = styled.div`
   width: 25%;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     display: none;
   }
 `;
 
 const LogoForMobile = styled(Logo)`
   display: none;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     display: flex;
     justify-content: center;
   }
@@ -119,7 +119,7 @@ const MenuButton = styled.button`
   background: none;
   font-size: 30px;
   transform: rotate(90deg);
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     position: absolute;
     left: 5%;
     display: block;
@@ -129,7 +129,7 @@ const MenuButton = styled.button`
 const SocialLinksBarWrapper = styled.div`
   width: 30%;
   height: 100%;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     display: none;
   }
 `;

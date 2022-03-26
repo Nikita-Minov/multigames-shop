@@ -4,57 +4,30 @@ import HeaderContainer from './components/Header/HeaderContainer';
 import GoodsContainer from './screens/Goods/GoodsContainer';
 import ProductContainer from './screens/Product/ProductContainer';
 import SuccessPayContainer from './screens/SuccessPay/SuccessPayContainer';
-import {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import SocialLinksBar from './components/Header/SocialLinksBar';
-import agreement from './assets/img/header/agreement.svg';
 /* eslint-disable no-unused-vars */
-import {SocialLink} from './types/components/header/header.types';
-
-import vk from './assets/img/header/vk.svg';
 import AdminHeaderContainer
   from './components/AdminHeader/AdminHeaderContainer';
 import AdminLoginContainer from './screens/AdminLogin/AdminLoginContainer';
 import AdminRegisterContainer
   from './screens/AdminRegister/AdminRegisterContainer';
-import {useCookies} from 'react-cookie';
-import {useDispatch, useSelector} from 'react-redux';
-import {getUser} from './redux/reducers/usersReducer/usersReducer';
-import {getProducts} from './redux/reducers/productsReducer/productsReducer';
-import {
-  getAllCategories,
-} from './redux/reducers/categoriesReducer/categoriesReducer';
-import {
-  getAllAgreements,
-} from './redux/reducers/agreementsReducer/agreementsReducer';
 import AdminCategoriesContainer
   from './screens/AdminCategories/AdminCategoriesContainer';
 import AdminAgreementContainer
   from './screens/AdminAgreement/AdminAgreementContainer';
 import AdminGoodsContainer
   from './screens/AdminGoods/AdminGoodsContainer';
-import {StoreTypes} from './types/redux/store.types';
 import AgreementContainer from './screens/Agreement/AgreementContainer';
+import {AppProps} from './types/app.types';
 /* eslint-enable no-unused-vars */
-const App = () => {
-  const socialLinksArray:Array<SocialLink> = [
-    {name: 'Техподдержка', url: '/', icon: vk},
-    {name: 'Отзывы', url: '/', icon: vk},
-    {name: 'Соглашение', url: '/agreement', icon: agreement},
-  ];
-  const dispatch = useDispatch();
-  const isAdmin = useSelector((state: StoreTypes) =>
-    state.usersReducer.user.isAdmin);
-  const [cookies] = useCookies(['token']);
-  useEffect(() => {
-    Promise.all([
-      dispatch(getProducts()),
-      dispatch(getAllCategories()),
-      dispatch(getUser(cookies.token)),
-      dispatch(getAllAgreements()),
-    ]);
-  }, []);
-  const [menuBar, setMenuBar] = useState(false);
+
+const App = ({
+  menuBar,
+  setMenuBar,
+  socialLinksArray,
+  isAdmin,
+}: AppProps) => {
   return (
     <>
       {menuBar?
@@ -132,7 +105,7 @@ const MenuBar = styled.div`
   height: 100%;
   z-index: 3;
   background-color: #1A1C27;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -74,7 +74,7 @@ const ProductsSection = styled.section<ProductsSessionProps>`
     background: rgba(0,0,0,.5);
     z-index: 2;
   }`: ''}
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
   padding-top: 75px;
   }
 `;
@@ -86,7 +86,7 @@ const ProductsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     justify-content: start;
     width: 90%;
   }
@@ -104,7 +104,7 @@ const OpenedPicture = styled.img`
   }
   border-radius: 15px;
   z-index: 3;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     top: 40%;
     height: 30%;
     left: 5%;

@@ -1,17 +1,10 @@
 /* eslint-disable no-unused-vars */
 import axios, {AxiosInstance} from 'axios';
+import {
+  CreateAgreement,
+  DeleteAgreement,
+} from '../types/api/agreementApi.types';
 /* eslint-enable no-unused-vars */
-
-interface DeleteAgreement {
-  token: string;
-  clauseOfAgrId: number;
-}
-
-interface CreateAgreement {
-  token: string;
-  clauseOfAgr: string;
-}
-
 
 /* eslint-disable require-jsdoc */
 

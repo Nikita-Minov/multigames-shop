@@ -7,6 +7,10 @@ import {
 } from '../../types/components/product/prieviewSection.types';
 /* eslint-enable no-unused-vars */
 
+interface ProductItemWrapperProps {
+  photoUrl: string;
+}
+
 const PreviewSection = ({
   productName,
   productPrice,
@@ -27,7 +31,7 @@ const PreviewSection = ({
             {productName}
           </ProductDescription>
           <ProductImage src={photos[0]} alt='img'/>
-          <ProductItemWrapper>
+          <ProductItemWrapper photoUrl={photos[0]}>
             <PriceField>
               {productPrice}Р
             </PriceField>
@@ -82,7 +86,7 @@ const PreviewSectionWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 30px;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     min-height: 300px;
     flex-direction: column;
     justify-content: start;
@@ -97,7 +101,7 @@ const PreviewBlock = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     align-items: start;
     min-height: 230px;
     border-radius: 15px 15px 0 0;
@@ -110,7 +114,7 @@ const PreviewBlockWrapper = styled.div`
   height: 90%;
   display: flex;
   flex-direction: column;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     align-items: center;
     justify-content: start;
   }
@@ -123,7 +127,7 @@ const BackLink = styled(Link)`
   color: #FFFFFF;
   text-decoration: none;
   margin-bottom: 20px;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     display: none;
   }
 `;
@@ -134,7 +138,7 @@ const ProductDescription = styled.p`
   font-size: 16px;
   color: #ffffff;
   margin-bottom: 20px;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     margin-top: 20px;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
@@ -148,7 +152,7 @@ const ProductImage = styled.img`
   width: 620px;
   height: 325px;
   border-radius: 20px;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     display: none;
   }
 `;
@@ -161,7 +165,7 @@ const PayBlock = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     border-radius: 0;
     width: 100%;
   }
@@ -173,7 +177,7 @@ const StatusAndPayBlock = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     display: none;
   }
 `;
@@ -183,7 +187,7 @@ const PayBlockPrice = styled.p`
   font-weight: 700;
   font-size: 24px;
   color: #FFFFFF;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     display: none;
   }
 `;
@@ -200,7 +204,7 @@ const InStockStatus = styled.p`
   font-weight: 700;
   font-size: 12px;
   color: #ffffff;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     display: none;
     background: linear-gradient(to right, #323950, #34345b);
   }
@@ -219,7 +223,7 @@ const InStockValue = styled.p`
   font-weight: 700;
   font-size: 12px;
   color: #ffffff;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     height: 60px;
     margin-top: 0;
     width: 48%;
@@ -229,7 +233,7 @@ const InStockValue = styled.p`
 `;
 
 const Category = styled(InStockValue)`
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     display: none;
   }
 `;
@@ -240,7 +244,7 @@ const InStockValueLight = styled.p`
   font-weight: 400;
   font-size: 12px;
   color: #ffffff;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     font-family: 'Inter', sans-serif;
     font-weight: 500;
   }
@@ -263,7 +267,7 @@ const BuyLink = styled.button`
     cursor: pointer;
   }
   border-radius: 0 0 15px 15px;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     width: 90%;
     height: 60px;
     border-radius: 15px;
@@ -274,18 +278,18 @@ const BuyLink = styled.button`
 `;
 
 
-const ProductItemWrapper = styled.div`
+const ProductItemWrapper = styled.div<ProductItemWrapperProps>`
   display: none;
   width: 350px;
   min-height: 190px;
-  background: url(${'https://i.imgur.com/e1QDkj5.jpg'}) no-repeat;
+  background: url(${(props) => props.photoUrl}) no-repeat;
   background-size: cover;
   border-radius: 20px;
   border: none;
   outline: none;
   margin-bottom: 30px;
   text-decoration: none;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     margin-bottom: 0;
     width: 275px;
     min-height: 150px;
@@ -309,7 +313,7 @@ const PriceField = styled.p`
   left: 230px;
   top: 10px;
   opacity: 0.95;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     left: 160px;
   }
 `;
@@ -319,14 +323,14 @@ const InfoBlock = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     display: none;
   }
 `;
 
 const InfoBlockMobile = styled.div`
   display: none;
-  @media(max-width: 375px) {
+  @media(max-width: 430px) {
     width: 90%;
     display: flex;
     justify-content: space-between;

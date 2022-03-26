@@ -42,12 +42,15 @@ const StyledForm = styled.form`
   width: 10%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
+
 `;
 
 const StyledInput = styled.input`
   border: solid 2px #000000;
   padding: 10px 0;
+  font-family: 'Roboto', sans-serif;
 `;
 
 const StyledButton = styled.button`
