@@ -23,7 +23,7 @@ const InfoSection = ({
         <InfoSectionDescription>
           {description}
         </InfoSectionDescription>
-        <Slider slides={mappedPhotos}/>
+        {mappedPhotos.length>1? <Slider slides={mappedPhotos}/>:<></>}
         <PicturesBlockForMobile>
           {newMappedPhotos}
         </PicturesBlockForMobile>

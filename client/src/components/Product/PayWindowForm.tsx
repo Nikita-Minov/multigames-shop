@@ -1,11 +1,11 @@
 import * as React from 'react';
-import {Field, Form, Formik} from 'formik';
+import {useFormik} from 'formik';
 import styled from 'styled-components';
 /* eslint-disable no-unused-vars */
 import {
   PayWindowFormProps,
-  MyFormValues,
 } from '../../types/components/product/payWindowForm.types';
+import payAPI from '../../api/pay.api';
 /* eslint-enable no-unused-vars */
 
 const PayWindowForm = ({
@@ -13,59 +13,72 @@ const PayWindowForm = ({
   product,
   setOpenedWindowPay,
 }: PayWindowFormProps) => {
-  const initialValues: MyFormValues = {amount: 1, email: ''};
+  const formik = useFormik({
+    initialValues: {
+      amount: 1,
+      email: '',
+    },
+    onSubmit: async (values) => {
+      if (product.inStock < values.amount) {
+        return alert('Такого количества аккаунтов нет в наличии!');
+      }
+      const url = await payAPI.getPayUrl({
+        email: values.email,
+        amount: values.amount,
+        productId: product.productId,
+      });
+      window.location.href = url;
+    },
+  });
   return (
-    <Formik
-      initialValues={initialValues}
-      onSubmit={(values) => {
-        alert(values.amount + values.email);
-      }}
-    >
-      <StyledForm>
-        <WindowPayField>
-          <WindowPayText>Наименование:</WindowPayText>
-          <WindowPayTextRegular>
-            {product.productName}
-          </WindowPayTextRegular>
-        </WindowPayField>
-        <WindowPayField>
-          <WindowPayText>Количество:</WindowPayText>
-          <WindowPayInput
-            id="amount"
-            name="amount"
-            placeholder="Количество" />
-        </WindowPayField>
-        <WindowPayField>
-          <WindowPayText>
-            E-mail:
-          </WindowPayText>
-          <WindowPayInput
-            id="email"
-            name="email"
-            placeholder="E-mail" />
-        </WindowPayField>
-        {payWays.map((el, id) => {
-          return (
-            <WindowPayFieldForBtn key={id}>
-              <WindowPayBtn
-                type='submit'>
-                <img src={el} alt=""/>
-              </WindowPayBtn>
-            </WindowPayFieldForBtn>
-          );
-        })}
-        <CloseBtn onClick={() => {
-          setOpenedWindowPay(false);
-        }
-        }>
-          Закрыть
-        </CloseBtn>
-      </StyledForm>
-    </Formik>
+    <StyledForm onSubmit={formik.handleSubmit}>
+      <WindowPayField>
+        <WindowPayText>Наименование:</WindowPayText>
+        <WindowPayTextRegular>
+          {product.productName}
+        </WindowPayTextRegular>
+      </WindowPayField>
+      <WindowPayField>
+        <WindowPayText>Количество:</WindowPayText>
+        <WindowPayInput
+          id="amount"
+          name="amount"
+          type="text"
+          onChange={formik.handleChange}
+          value={formik.values.amount} />
+      </WindowPayField>
+      <WindowPayField>
+        <WindowPayText>
+          E-mail:
+        </WindowPayText>
+        <WindowPayInput
+          id="email"
+          name="email"
+          type="text"
+          onChange={formik.handleChange}
+          value={formik.values.email} />
+      </WindowPayField>
+      {payWays.map((el, id) => {
+        return (
+          <WindowPayFieldForBtn key={id}>
+            <WindowPayBtn
+              type='submit'>
+              <img src={el} alt=""/>
+            </WindowPayBtn>
+          </WindowPayFieldForBtn>
+        );
+      })}
+      <CloseBtn onClick={() => {
+        setOpenedWindowPay(false);
+      }
+      }>
+        Закрыть
+      </CloseBtn>
+    </StyledForm>
   );
 };
 
-const StyledForm = styled(Form)`
+const StyledForm = styled.form`
   width: 100%;
   height: 100%;
   display: flex;
@@ -108,7 +121,7 @@ const WindowPayTextRegular = styled.p`
   }
 `;
 
-const WindowPayInput = styled(Field)`
+const WindowPayInput = styled.input`
   width: 70%;
   background: #242430;
   border-radius: 15px;

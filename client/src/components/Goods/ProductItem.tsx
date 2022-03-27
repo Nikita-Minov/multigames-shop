@@ -25,7 +25,7 @@ const ProductItem = ({product}: ProductItemProps) => {
 };
 
 const ProductItemWrapper = styled(Link)<ProductItemWrapperProps>`
-  width: 350px;
+  width: 330px;
   height: 190px;
   background: url(${(props) => props.url}) no-repeat;
   background-size: cover;
@@ -53,7 +53,7 @@ const PriceField = styled.p`
   font-weight: 500;
   font-size: 14px;
   position: relative;
-  left: 230px;
+  left: 210px;
   top: 10px;
   opacity: 0.95;
   @media(max-width: 430px) {

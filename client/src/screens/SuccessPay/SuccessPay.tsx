@@ -4,23 +4,22 @@ import bg from '../../assets/img/goods/bg.jpg';
 import {Link} from 'react-router-dom';
 
 interface AccountType {
-  name: string;
+  orderName: string;
   amount: number;
   email: string;
-  date: string;
-  data: string;
+  date: any;
+  data: string[];
   price: number;
 }
 
-const SuccessPay = () => {
-  const account: AccountType = {
-    name: 'От 30 до 52 бойцов [ПОЛНЫЙ ДОСТУП]',
-    amount: 1,
-    email: 'skskasw@mail.ru',
-    date: '18.03.2022 10:37:12',
-    data: 'login:pass',
-    price: 115,
-  };
+const SuccessPay = ({
+  orderName,
+  amount,
+  email,
+  price,
+  data,
+  date,
+}: AccountType) => {
   return (
     <SuccessPaySection>
       <SuccessPayWrapper>
@@ -31,7 +30,7 @@ const SuccessPay = () => {
                 Наименование:
               </SuccessPayText>
               <SuccessPayTextRegular>
-                {account.name}
+                {orderName}
               </SuccessPayTextRegular>
             </SuccessPayField>
             <SuccessPayField>
@@ -39,7 +38,7 @@ const SuccessPay = () => {
                 Количество:
               </SuccessPayText>
               <SuccessPayTextRegular>
-                {account.amount}
+                {amount}
               </SuccessPayTextRegular>
             </SuccessPayField>
             <SuccessPayField>
@@ -47,7 +46,7 @@ const SuccessPay = () => {
                 Ваш E-mail:
               </SuccessPayText>
               <SuccessPayTextRegular>
-                {account.email}
+                {email}
               </SuccessPayTextRegular>
             </SuccessPayField>
             <SuccessPayField>
@@ -55,23 +54,27 @@ const SuccessPay = () => {
                 Дата и время:
               </SuccessPayText>
               <SuccessPayTextRegular>
-                {account.date}
+                {date.toString()}
               </SuccessPayTextRegular>
             </SuccessPayField>
             <SuccessPayField>
               <SuccessPayText>
                 Данные от аккаунта:
               </SuccessPayText>
-              <SuccessPayTextRegular>
-                {account.data}
-              </SuccessPayTextRegular>
+              {data?data.map((el, id) => {
+                return (
+                  <SuccessPayTextRegular key={id}>
+                    {el}
+                  </SuccessPayTextRegular>
+                );
+              }): <></>}
             </SuccessPayField>
             <SuccessPayField>
               <SuccessPayText>
                 Цена:
               </SuccessPayText>
               <SuccessPayTextRegular>
-                {account.price}
+                {price}
               </SuccessPayTextRegular>
             </SuccessPayField>
             <BackLink to={'/'}>
@@ -137,7 +140,7 @@ const SuccessPayBlock = styled.div`
 `;
 
 const SuccessPayField = styled.div`
-  width: 70%;
+  width: 100%;
   height: 50px;
   display: flex;
   align-items: center;

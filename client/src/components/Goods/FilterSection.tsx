@@ -15,6 +15,10 @@ import {
   setProducts,
 } from '../../redux/reducers/productsReducer/productsReducer';
 
+interface OpenFilterBlockProps {
+  filterOpened: boolean;
+}
+
 const FilterSection = ({
   usualFilter,
   customFilter,
@@ -27,7 +31,7 @@ const FilterSection = ({
   return (
     <>
       <FilterSectionWrapperMobile>
-        <OpenFilterBlock>
+        <OpenFilterBlock filterOpened={filterOpened}>
           {filterOpened?<OpenFilterButton onClick={() => {
             setFilterOpened(false);
           }}>
@@ -137,7 +141,7 @@ const FilterSectionWrapperMobile = styled.div`
   }
 `;
 
-const OpenFilterBlock = styled.div`
+const OpenFilterBlock = styled.div<OpenFilterBlockProps>`
   display: none;
   width: 100%;
   min-height: 70px;
@@ -149,7 +153,7 @@ const OpenFilterBlock = styled.div`
     margin-top: 10px;
     max-height: 50px;
     display: flex;
-    border-radius: 10px;
+    border-radius: ${(props) => props.filterOpened? '10px 10px 0 0': '10px'};
   }
 `;
 

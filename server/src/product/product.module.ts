@@ -8,6 +8,7 @@ import {Category} from "../models/category.model";
 @Module({
   imports: [SequelizeModule.forFeature([Product, Category])],
   providers: [ProductService],
-  controllers: [ProductController]
+  controllers: [ProductController],
+  exports: [ProductService],
 })
 export class ProductModule {}

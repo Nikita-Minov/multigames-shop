@@ -10,13 +10,15 @@ import { CategoryModule } from './category/category.module';
 import {Category} from "./models/category.model";
 import { AgreementModule } from './agreement/agreement.module';
 import {Agreement} from "./models/agreement.model";
+import { PayModule } from './pay/pay.module';
+import {Purchase} from "./models/purchase.model";
 
 @Module({
   imports: [
     ConfigModule.forRoot({
     envFilePath: `.${process.env.NODE_ENV}.env`,
   }),
-    SequelizeModule.forFeature([User, Product, Category, Agreement]),
+    SequelizeModule.forFeature([User, Product, Category, Agreement, Purchase]),
     SequelizeModule.forRoot({
       dialect: "postgres",
       host: process.env.DB_HOST,
@@ -32,6 +34,7 @@ import {Agreement} from "./models/agreement.model";
     ProductModule,
     CategoryModule,
     AgreementModule,
+    PayModule,
   ],
   controllers: [],
   providers: [],

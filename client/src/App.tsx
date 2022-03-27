@@ -55,7 +55,7 @@ const App = ({
             <AgreementContainer/>
           </>
         } />
-        <Route path="/success" element={
+        <Route path="/success/:orderId" element={
           <>
             <HeaderContainer setMenuBar={setMenuBar} menuBar={menuBar}/>
             <SuccessPayContainer/>
