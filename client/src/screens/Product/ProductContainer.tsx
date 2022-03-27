@@ -4,7 +4,6 @@ import {useEffect, useState} from 'react';
 import {StateTypes} from '../../types/screens/product.types';
 import styled from 'styled-components';
 import qiwi from '../../assets/img/product/qiwi.svg';
-import youmoney from '../../assets/img/product/youmoney.svg';
 import card from '../../assets/img/product/card.svg';
 import {useDispatch, useSelector} from 'react-redux';
 import {useParams} from 'react-router-dom';
@@ -35,7 +34,7 @@ const ProductContainer = () => {
       }}/>
     );
   });
-  const payWays: Array<string> = [qiwi, youmoney, card];
+  const payWays: Array<string> = [qiwi, card];
   const [openedWindowPay, setOpenedWindowPay] = useState(false);
   return (
     <Product

@@ -39,15 +39,6 @@ const PayWindowForm = ({
         </WindowPayTextRegular>
       </WindowPayField>
       <WindowPayField>
-        <WindowPayText>Количество:</WindowPayText>
-        <WindowPayInput
-          id="amount"
-          name="amount"
-          type="text"
-          onChange={formik.handleChange}
-          value={formik.values.amount} />
-      </WindowPayField>
-      <WindowPayField>
         <WindowPayText>
           E-mail:
         </WindowPayText>
@@ -58,6 +49,16 @@ const PayWindowForm = ({
           onChange={formik.handleChange}
           value={formik.values.email} />
       </WindowPayField>
+      <WindowPayField>
+        <WindowPayText>Количество:</WindowPayText>
+        <WindowPayInput
+          id="amount"
+          name="amount"
+          type="text"
+          onChange={formik.handleChange}
+          value={formik.values.amount} />
+      </WindowPayField>
+
       {payWays.map((el, id) => {
         return (
           <WindowPayFieldForBtn key={id}>

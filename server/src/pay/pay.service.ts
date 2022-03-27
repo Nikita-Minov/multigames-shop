@@ -5,6 +5,7 @@ import {InjectModel} from "@nestjs/sequelize";
 import {Purchase} from "../models/purchase.model";
 import {Product} from "../models/product.model";
 import {ProductService} from "../product/product.service";
+import {appendFileSync, unlinkSync, writeFileSync} from 'fs';
 
 @Injectable()
 export class PayService {
@@ -47,12 +48,13 @@ export class PayService {
   }
 
   async updateOrder({orderId}: {orderId: string}) {
-    console.log('ПРИЛЕТЕЛ ХУК');
     const purchase = await this.purchaseRepository.findOne({where: {orderId}});
     const soldProducts = await this.productService.soldProduct({productId: purchase.productId, amount: purchase.purchaseAmount});
     let arr = [];
     let newArr = arr.concat(soldProducts.soldAccounts);
     await this.purchaseRepository.update({data: newArr, status: true}, {where: {orderId}});
+    const date = new Date();
+    appendFileSync('./src/log.txt', `\n[${date.getFullYear()}-${date.getMonth()}-${date.getDay()}-${date.getHours()}-${date.getSeconds()}] ${purchase.email} купил ${purchase.purchaseName} за ${purchase.sum}р.`);
     return {status: 200};
   }
 
@@ -70,4 +72,8 @@ export class PayService {
     }
   }
 
+  async deleteLogFile() {
+    unlinkSync('./src/log.txt');
+    writeFileSync('./src/log.txt', '');
+  }
 }

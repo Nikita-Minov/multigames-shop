@@ -45,6 +45,47 @@ class AgreementsAPI {
       console.log(error);
     }
   }
+
+  async getLog(token: string) {
+    try {
+      const result = await this.instance.get('/pay/log', {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'responseType': 'blob',
+        },
+      });
+      const blob = new Blob(
+          [result.data],
+          {type: result.headers['text'],
+          });
+
+      const downloadUrl = window.URL.createObjectURL(blob);
+      const linkUrl = document.createElement('a');
+
+      linkUrl.download = downloadUrl;
+      linkUrl.href = downloadUrl;
+      document.body.appendChild(linkUrl);
+      linkUrl.click();
+      document.body.removeChild(linkUrl);
+      linkUrl.remove();
+      return downloadUrl;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async deleteLog(token: string) {
+    try {
+      const result = await this.instance.get('/pay/delete-log', {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+      return result.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }
 
 export default new AgreementsAPI();

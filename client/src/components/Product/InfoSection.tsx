@@ -8,6 +8,10 @@ import {useState} from 'react';
 import Slider from './Slider';
 /* eslint-enable no-unused-vars */
 
+interface InfoSectionWrapper {
+  mappedPhotosLength: number;
+}
+
 const InfoSection = ({
   description,
   mappedPhotos,
@@ -38,7 +42,7 @@ const InfoSectionWrapper = styled.div`
   margin-top: 40px;
   background-color: #1A1C27;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   border-radius: 15px 15px 0 0;
   @media(max-width: 430px) {
@@ -50,6 +54,7 @@ const InfoSectionWrapper = styled.div`
 const InfoSectionBlock = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 50px;
   width: 90%;
   height: 90%;
   @media(max-width: 430px) {
