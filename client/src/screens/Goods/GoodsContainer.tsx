@@ -20,6 +20,7 @@ const GoodsContainer = () => {
   const categories = useSelector((state: StoreTypes) =>
     state.categoriesReducer.mappedCategories);
 
+
   function sortArr(arr: Array<Product>) {
     return arr.sort((a, b) => a.productPrice > b.productPrice? 1: -1);
   }

@@ -56,7 +56,7 @@ class AgreementsAPI {
       });
       const blob = new Blob(
           [result.data],
-          {type: result.headers['text'],
+          {type: result.headers['text/plain'],
           });
 
       const downloadUrl = window.URL.createObjectURL(blob);

@@ -38,7 +38,7 @@ export class PayService {
     productId,
     date: new Date(),
     })
-    const data = `wallet_to=${process.env.LAVA_WALLET}&sum=${product.productPrice*amount}.00&order_id=${stringId}&hook_url=${process.env.HOOK_URL}&success_url=${process.env.SUCCESS_URL + stringId}&fail_url=${process.env.FAIL_URL}&merchant_name=Покупка ${product.productName} в количестве ${amount} шт.`;
+    const data = `wallet_to=${process.env.LAVA_WALLET}&sum=${product.productPrice*amount}.00&order_id=${stringId}&hook_url=${process.env.HOOK_URL}&success_url=${process.env.SUCCESS_URL + stringId}&fail_url=${process.env.FAIL_URL}&merchant_name=Покупка ${product.productName} в количестве ${amount} шт.&subtract=1`;
     return this.httpService.post('https://api.lava.ru/invoice/create', data, {
       headers: {
       'Authorization': process.env.LAVA_JWT,

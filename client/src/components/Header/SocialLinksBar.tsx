@@ -12,7 +12,7 @@ const SocialLinksBar = ({socialLinks}: SocialLinksBarProps) => {
       {
         socialLinks.map((el, id) => {
           return (
-            <SocialLink key={id} href={el.url}>
+            <SocialLink key={id} href={el.url} target='_blank'>
               {el.name} <SocialLinkImg src={el.icon} alt={el.name}/>
             </SocialLink>
           );

@@ -39,9 +39,9 @@ const AppContainer = () => {
     Promise.all([
       dispatch(getProducts()),
       dispatch(getAllCategories()),
-      dispatch(getUser(cookies.token)),
       dispatch(getAllAgreements()),
     ]);
+    if (cookies.token) dispatch(getUser(cookies.token));
   }, []);
   const [menuBar, setMenuBar] = useState(false);
   return (

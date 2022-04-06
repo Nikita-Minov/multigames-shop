@@ -16,12 +16,10 @@ interface AdminGoodsProps {
 const AdminGoods = ({products}: AdminGoodsProps) => {
   const [cookies] = useCookies();
   const getLog = async (token: string) => {
-    const res = await payAPI.getLog(token);
-    return res;
+    return await payAPI.getLog(token);
   };
   const clearLog = async (token: string) => {
-    const res = await payAPI.deleteLog(token);
-    return res;
+    return await payAPI.deleteLog(token);
   };
   return (
     <AdminGoodsWrapper>

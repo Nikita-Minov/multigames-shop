@@ -37,14 +37,14 @@ const WindowPay = styled.div`
   left: 25%;
   top: 10%;
   border-radius: 15px;
-  z-index: 3;
+  z-index: 12;
   display: flex;
   align-items: center;
   justify-content: center;
   @media(max-width: 430px) {
     width: 90%;
     left: 5%;
-    top: 5%;
+    top: -2%;
     min-height: 550px;
   }
 `;

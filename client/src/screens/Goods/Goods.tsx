@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import bg from '../../assets/img/goods/bg.jpg';
-import cover from '../../assets/img/goods/cover.jpg';
+import cover from '../../assets/img/goods/cover.png';
 import FilterSection from '../../components/Goods/FilterSection';
 /* eslint-disable no-unused-vars */
 import {GoodsProps} from '../../types/screens/goods.types';
@@ -27,7 +27,7 @@ const Goods = ({
           usualFilter={usualFilter}
           products={products}
         />
-        <HowToBuy href={'google.com'}>
+        <HowToBuy href={'/'}>
           <img src={howtobuy} alt=""/>
           Как купить?
         </HowToBuy>
