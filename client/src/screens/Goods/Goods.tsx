@@ -81,10 +81,9 @@ const CoverImg = styled.img`
 
 const ProductSection = styled.div`
   margin-top: 20px;
-  width: 100%;
+  width: 102%;
   min-height: 400px;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   @media(max-width: 430px) {
     margin-top: 10px;

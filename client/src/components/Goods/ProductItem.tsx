@@ -33,6 +33,8 @@ const ProductItemWrapper = styled(Link)<ProductItemWrapperProps>`
   border: none;
   outline: none;
   margin-bottom: 30px;
+  margin-right: 1%;
+  margin-left: 1%;
   text-decoration: none;
   @media(max-width: 430px) {
     width: 275px;
