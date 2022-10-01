@@ -33,8 +33,11 @@ const NavBarWrapper = styled.nav`
   width: 20%;
   display: flex;
   height: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  @media(max-width: 500px) {
+    flex-direction: column;
+  }
   @media(max-width: 430px) {
     display: none;
   }
@@ -48,6 +51,12 @@ const NavBarLink = styled(Link)<LinkProps>`
   color: #ffffff;
   text-decoration: none;
   border-bottom: ${(props) => props.isActive? '#A3DDFC 2px solid': 'none'} ;
+  @media(max-width: 800px) {
+    font-size: 14px;
+  }
+  @media(max-width: 500px) {
+    font-size: 12px;
+  }
 `;
 
 export default NavBar;

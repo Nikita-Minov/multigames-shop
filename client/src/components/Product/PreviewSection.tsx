@@ -86,6 +86,9 @@ const PreviewSectionWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 30px;
+  @media(max-width: 1400px) {
+    flex-direction: column;
+  }
   @media(max-width: 430px) {
     min-height: 300px;
     flex-direction: column;
@@ -101,7 +104,12 @@ const PreviewBlock = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media(max-width: 1400px) {
+    width: 100%;
+    margin-bottom: 30px;
+  }
   @media(max-width: 430px) {
+    margin-bottom: 0;
     align-items: start;
     min-height: 230px;
     border-radius: 15px 15px 0 0;
@@ -165,6 +173,9 @@ const PayBlock = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media(max-width: 1400px) {
+    width: 100%;
+  }
   @media(max-width: 430px) {
     border-radius: 0;
     width: 100%;

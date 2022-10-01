@@ -75,7 +75,7 @@ const ProductsSection = styled.section<ProductsSessionProps>`
     z-index: 11;
   }`: ''}
   @media(max-width: 430px) {
-  padding-top: 75px;
+    padding-top: 75px;
   }
 `;
 
@@ -86,6 +86,9 @@ const ProductsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media(max-width: 800px) {
+    width: 90%;
+  }
   @media(max-width: 430px) {
     justify-content: start;
     width: 90%;

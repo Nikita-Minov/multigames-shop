@@ -23,17 +23,17 @@ const Header = ({
         <Logo>
           <LogoLink to='/'>
             <LogoText>
-              mg
+              sg
             </LogoText>
             <LogoTextLight>
-              | MultiGames - лучший игровой магазин!
+              | SharkGames - лучший игровой магазин!
             </LogoTextLight>
           </LogoLink>
         </Logo>
         <LogoForMobile>
           <LogoLinkForMobile to='/'>
             <LogoText>
-              MultiGames
+              SharkGames
             </LogoText>
           </LogoLinkForMobile>
         </LogoForMobile>
@@ -64,6 +64,9 @@ const HeaderSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media(max-width: 800px) {
+    width: 90%;
+  }
   @media(max-width: 430px) {
     justify-content: center;
   }
@@ -100,6 +103,15 @@ const LogoText = styled.h3`
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 20px;
+  @media(max-width: 800px) {
+    font-size: 16px;
+  }
+  @media(max-width: 500px) {
+    font-size: 12px;
+  }
+  @media(max-width: 430px) {
+    font-size: 20px;
+  }
 `;
 
 const LogoTextLight = styled.h3`
@@ -107,6 +119,12 @@ const LogoTextLight = styled.h3`
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 16px;
+  @media(max-width: 800px) {
+    font-size: 14px;
+  }
+  @media(max-width: 500px) {
+    font-size: 10px;
+  }
 `;
 
 const MenuButton = styled.button`

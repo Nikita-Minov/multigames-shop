@@ -122,9 +122,10 @@ const FilterSection = ({
 const FilterSectionWrapper = styled.div`
   width: 100%;
   min-height: 100px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
   justify-content: space-between;
-  flex-wrap: wrap;
+  justify-items: center;
   @media(max-width: 430px) {
     display: none;
   }
@@ -171,19 +172,25 @@ const OpenFilterButton = styled.button`
   width: 45%;
 `;
 
-// min-width: ${(props: FilterProps) =>
-//   (props.length * 160)}px;
 const FilterBlock = styled.div<FilterProps>`
+  width: 95%;
   margin-top: 20px;
   min-width: 100px;
   min-height: 90px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: #1C1F29;
   border-radius: 20px;
   flex-wrap: wrap;
   padding-top: 20px;
   padding-right: 20px;
+  @media(max-width: 1300px) {
+    justify-content: center;
+  }
+  @media(max-width: 1000px) {
+    width: 90%;
+  }
   @media(max-width: 430px) {
     margin-top: 0;
     border-radius: 0;
@@ -204,6 +211,7 @@ const FilterBlockInRow = styled(FilterBlock)`
 
 const CustomFilterBlock = styled(FilterBlock)`
   @media(max-width: 430px) {
+    width: 100%;
     margin-top: 0;
     margin-bottom: 20px;
     border-radius: 0 0 15px 15px;
@@ -234,6 +242,16 @@ const FilterItem = styled.button<FilterItemProps>`
   opacity: 0.7;
   margin-bottom: 20px;
   margin-left: 20px;
+  @media(max-width: 1000px) {
+    width: 150px;
+    height: 40px;
+    font-size: 14px;
+  }
+  @media(max-width: 500px) {
+    width: 130px;
+    height: 40px;
+    font-size: 12px;
+  }
   @media(max-width: 430px) {
     width: 130px;
     height: 50px;

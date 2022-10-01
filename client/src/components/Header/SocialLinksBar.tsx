@@ -29,6 +29,11 @@ const SocialLinksBarWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media(max-width: 1650px) {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
   @media(max-width: 430px) {
     flex-direction: column;
     align-items: center;
@@ -49,8 +54,22 @@ const SocialLink = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media(max-width: 1650px) {
+    font-size: 14px;
+  }
+  @media(max-width: 800px) {
+    width: 140px;
+    height: 30px;
+    font-size: 12px;
+  }
+  @media(max-width: 500px) {
+    width: 120px;
+  }
   @media(max-width: 430px) {
+    font-size: 16px;
     margin-top: 20px;
+    width: 180px;
+    height: 40px;
   }
 `;
 
@@ -58,6 +77,18 @@ const SocialLinkImg = styled.img`
   width: 25px;
   height: 25px;
   margin-left: 10px;
+  @media(max-width: 800px) {
+    width: 20px;
+    height: 20px;
+  }
+  @media(max-width: 500px) {
+    width: 15px;
+    height: 15px;
+  }
+  @media(max-width: 430px) {
+    width: 25px;
+    height: 25px;
+  }
 `;
 
 export default SocialLinksBar;

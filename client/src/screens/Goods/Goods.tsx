@@ -74,6 +74,21 @@ const CoverImg = styled.img`
   width: 100%;
   height: 240px;
   border-radius: 20px;
+  @media(max-width: 1400px) {
+    height: 200px;
+  }
+  @media(max-width: 1100px) {
+    height: 160px;
+  }
+  @media(max-width: 900px) {
+    height: 120px;
+  }
+  @media(max-width: 650px) {
+    height: 100px;
+  }
+  @media(max-width: 500px) {
+    height: 80px;
+  }
   @media(max-width: 430px) {
     display: none;
   }
@@ -81,16 +96,18 @@ const CoverImg = styled.img`
 
 const ProductSection = styled.div`
   margin-top: 20px;
-  width: 102%;
+  width: 100%;
   min-height: 400px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(4, auto);
   @media(max-width: 430px) {
+    grid-template-columns: auto;
     margin-top: 10px;
     background: #1A1C27;
     border-radius: 10px;
     padding-top: 40px;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
 `;
