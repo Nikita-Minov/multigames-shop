@@ -58,7 +58,7 @@ const Product = ({
 
 const ProductsSection = styled.section<ProductsSessionProps>`
   padding-top: 100px;
-  width: 1920px;
+  min-width: 1900px;
   min-height: 100vh;
   background-image:
           linear-gradient(to top, rgba(41,41,53,0.97), rgba(41,41,53,0.97)),
@@ -75,6 +75,7 @@ const ProductsSection = styled.section<ProductsSessionProps>`
     z-index: 11;
   }`: ''};
   @media(max-width: 430px) {
+    min-width: 100%;
     padding-top: 75px;
     width: 100%;
   }

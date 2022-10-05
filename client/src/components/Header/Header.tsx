@@ -49,11 +49,10 @@ const Header = ({
 const HeaderWrapper = styled.header`
   z-index: 10;
   position: fixed;
-  width: 1920px;
+  width: 100%;
   height: 100px;
   background-color: #1A1C27;
   @media(max-width: 430px) {
-    width: 100%;
     height: 75px;
   }
 `;
