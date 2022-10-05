@@ -47,19 +47,20 @@ const Goods = ({
 
 const GoodsSection = styled.section`
   padding-top: 100px;
-  width: 100%;
+  width: 1920px;
   min-height: 100vh;
   background-image:
           linear-gradient(to top, rgba(41,41,53,0.97), rgba(41,41,53,0.97)),
           url(${bg});
   @media(max-width: 430px) {
+    width: 100%;
     padding-top: 75px;
   }
 `;
 
 const GoodsWrapper = styled.div`
   margin: auto;
-  width: 75%;
+  width: 1440px;
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -71,24 +72,9 @@ const GoodsWrapper = styled.div`
 
 const CoverImg = styled.img`
   margin-top: 20px;
-  width: 100%;
+  width: 98%;
   height: 240px;
   border-radius: 20px;
-  @media(max-width: 1400px) {
-    height: 200px;
-  }
-  @media(max-width: 1100px) {
-    height: 160px;
-  }
-  @media(max-width: 900px) {
-    height: 120px;
-  }
-  @media(max-width: 650px) {
-    height: 100px;
-  }
-  @media(max-width: 500px) {
-    height: 80px;
-  }
   @media(max-width: 430px) {
     display: none;
   }

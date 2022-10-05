@@ -25,9 +25,9 @@ const ProductItem = ({product}: ProductItemProps) => {
 };
 
 const ProductItemWrapper = styled(Link)<ProductItemWrapperProps>`
-  width: 90%;
+  width: 325px;
   height: 190px;
-  background: url(${(props) => props.url}) no-repeat;
+  background: url(${(props) => props.url})  no-repeat;
   background-size: cover;
   border-radius: 20px;
   border: none;
@@ -36,18 +36,6 @@ const ProductItemWrapper = styled(Link)<ProductItemWrapperProps>`
   margin-right: 1%;
   margin-left: 1%;
   text-decoration: none;
-  @media(max-width: 1200px) {
-    height: 150px;
-  }
-  @media(max-width: 1100px) {
-    height: 100px;
-  }
-  @media(max-width: 1000px) {
-    height: 80px;
-  }
-  @media(max-width: 700px) {
-    height: 60px;
-  }
   @media(max-width: 430px) {
     width: 275px;
     height: 150px;
@@ -70,12 +58,6 @@ const PriceField = styled.p`
   left: 60%;
   top: 10px;
   opacity: 0.95;
-  @media(max-width: 1000px) {
-    font-size: 10px;
-  }
-  @media(max-width: 700px) {
-    font-size: 8px;
-  }
   @media(max-width: 430px) {
     font-size: 14px;
   }
@@ -98,16 +80,6 @@ const DescriptionField = styled.p`
   top: 72%;
   opacity: 0.95;
   text-align: center;
-  @media(max-width: 1100px) {
-    top: 50%;
-  }
-  @media(max-width: 1000px) {
-    font-size: 10px;
-    top: 50%;
-  }
-  @media(max-width: 700px) {
-    top: 20%;
-  }
   @media(max-width: 430px) {
     font-size: 14px;
     top: 85px;

@@ -49,10 +49,11 @@ const Header = ({
 const HeaderWrapper = styled.header`
   z-index: 10;
   position: fixed;
-  width: 100%;
+  width: 1920px;
   height: 100px;
   background-color: #1A1C27;
   @media(max-width: 430px) {
+    width: 100%;
     height: 75px;
   }
 `;
@@ -103,15 +104,6 @@ const LogoText = styled.h3`
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 20px;
-  @media(max-width: 800px) {
-    font-size: 16px;
-  }
-  @media(max-width: 500px) {
-    font-size: 12px;
-  }
-  @media(max-width: 430px) {
-    font-size: 20px;
-  }
 `;
 
 const LogoTextLight = styled.h3`
@@ -119,12 +111,6 @@ const LogoTextLight = styled.h3`
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 16px;
-  @media(max-width: 800px) {
-    font-size: 14px;
-  }
-  @media(max-width: 500px) {
-    font-size: 10px;
-  }
 `;
 
 const MenuButton = styled.button`

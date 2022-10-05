@@ -185,12 +185,6 @@ const FilterBlock = styled.div<FilterProps>`
   flex-wrap: wrap;
   padding-top: 20px;
   padding-right: 20px;
-  @media(max-width: 1300px) {
-    justify-content: center;
-  }
-  @media(max-width: 1000px) {
-    width: 90%;
-  }
   @media(max-width: 430px) {
     margin-top: 0;
     border-radius: 0;
@@ -242,16 +236,6 @@ const FilterItem = styled.button<FilterItemProps>`
   opacity: 0.7;
   margin-bottom: 20px;
   margin-left: 20px;
-  @media(max-width: 1000px) {
-    width: 150px;
-    height: 40px;
-    font-size: 14px;
-  }
-  @media(max-width: 500px) {
-    width: 130px;
-    height: 40px;
-    font-size: 12px;
-  }
   @media(max-width: 430px) {
     width: 130px;
     height: 50px;
