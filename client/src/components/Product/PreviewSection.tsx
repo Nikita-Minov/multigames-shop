@@ -292,7 +292,7 @@ const ProductItemWrapper = styled.div<ProductItemWrapperProps>`
   text-decoration: none;
   @media(max-width: 430px) {
     margin-bottom: 0;
-    width: 275px;
+    width: 100%;
     min-height: 150px;
     display: block;
   }

@@ -26,14 +26,14 @@ const Header = ({
               sg
             </LogoText>
             <LogoTextLight>
-              | SharkGames - лучший игровой магазин!
+              | SkyGames - Небесные аккаунты по земным ценам!
             </LogoTextLight>
           </LogoLink>
         </Logo>
         <LogoForMobile>
           <LogoLinkForMobile to='/'>
             <LogoText>
-              SharkGames
+              SkyGames
             </LogoText>
           </LogoLinkForMobile>
         </LogoForMobile>
@@ -64,9 +64,6 @@ const HeaderSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  @media(max-width: 800px) {
-    width: 90%;
-  }
   @media(max-width: 430px) {
     justify-content: center;
   }

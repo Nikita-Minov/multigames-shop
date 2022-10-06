@@ -52,6 +52,8 @@ const GoodsSection = styled.section`
   background-image:
           linear-gradient(to top, rgba(41,41,53,0.97), rgba(41,41,53,0.97)),
           url(${bg});
+  background-size: cover;
+  background-repeat: no-repeat;
   @media(max-width: 430px) {
     min-width: 100%;
     padding-top: 75px;

@@ -31,12 +31,15 @@ const Agreement = ({agreementPoints}: AgreementProps) => {
 
 const AgreementSection = styled.section`
   padding-top: 100px;
-  width: 100%;
+  min-width: 1900px;
   min-height: 100vh;
   background-image:
           linear-gradient(to top, rgba(41,41,53,0.97), rgba(41,41,53,0.97)),
           url(${bg});
+  background-size: cover;
+  background-repeat: no-repeat;
   @media(max-width: 430px) {
+    width: 100%;
     padding-top: 75px;
   }
 `;

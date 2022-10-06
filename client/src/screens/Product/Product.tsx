@@ -63,6 +63,8 @@ const ProductsSection = styled.section<ProductsSessionProps>`
   background-image:
           linear-gradient(to top, rgba(41,41,53,0.97), rgba(41,41,53,0.97)),
           url(${bg});
+  background-size: cover;
+  background-repeat: no-repeat;
   ${(props) => props.flag || props.windowPayOpenedFlag?`
   :after {
     content: '';

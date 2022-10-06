@@ -15,6 +15,15 @@ const SuccessPayContainer = () => {
     state.orderReducer.order);
   const dispatch = useDispatch();
   const {orderId} = useParams();
+  const formatter = new Intl.DateTimeFormat('ru', {
+    timeZone: 'Europe/Moscow',
+    year: '2-digit',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+  const newDate = formatter.format(new Date(order.date));
   useEffect(() => {
     dispatch(getOrder(orderId));
   }, []);
@@ -25,7 +34,7 @@ const SuccessPayContainer = () => {
       amount={order.amount}
       price={order.price}
       data={order.data}
-      date={order.date}
+      date={newDate}
     />
   );
 };
