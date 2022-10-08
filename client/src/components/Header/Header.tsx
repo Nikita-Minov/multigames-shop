@@ -2,7 +2,10 @@ import * as React from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 /* eslint-disable no-unused-vars */
-import {HeaderProps} from '../../types/components/header/header.types';
+import {
+  HeaderProps,
+  HeaderWrapperProps,
+} from '../../types/components/header/header.types';
 import NavBar from './NavBar';
 import SocialLinksBar from './SocialLinksBar';
 /* eslint-enable no-unused-vars */
@@ -15,7 +18,7 @@ const Header = ({
   menuBar,
 }: HeaderProps) => {
   return (
-    <HeaderWrapper>
+    <HeaderWrapper menuBar={menuBar}>
       <HeaderSection>
         <MenuButton onClick={() => {
           menuBar?setMenuBar(false):setMenuBar(true);
@@ -46,13 +49,15 @@ const Header = ({
   );
 };
 
-const HeaderWrapper = styled.header`
+const HeaderWrapper = styled.header<HeaderWrapperProps>`
+  position: ${(props) => props.menuBar? 'fixed': 'static'};
   z-index: 10;
-  position: fixed;
-  width: 100%;
+  min-width: 1900px;
   height: 100px;
   background-color: #1A1C27;
   @media(max-width: 430px) {
+    min-width: 100%;
+    width: 100%;
     height: 75px;
   }
 `;

@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import axios, {AxiosInstance} from 'axios';
+import {config} from '../config/config';
 /* eslint-enable no-unused-vars */
 
 interface GetPayUrl {
@@ -18,7 +19,7 @@ class AgreementsAPI {
   protected readonly instance: AxiosInstance;
   constructor() {
     this.instance = axios.create({
-      baseURL: 'http://localhost:3001/api/v1/',
+      baseURL: `http://${config.ip}/api/v1`,
       withCredentials: true,
     });
   };

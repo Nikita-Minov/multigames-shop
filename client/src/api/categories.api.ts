@@ -4,6 +4,7 @@ import {
   AddCategory,
   DeleteCategory,
   GetCategory} from '../types/api/categoriesApi.types';
+import {config} from '../config/config';
 /* eslint-enable no-unused-vars */
 
 /* eslint-disable require-jsdoc */
@@ -12,7 +13,7 @@ class CategoriesAPI {
   protected readonly instance: AxiosInstance;
   constructor() {
     this.instance = axios.create({
-      baseURL: 'http://localhost:3001/api/v1/',
+      baseURL: `http://${config.ip}/api/v1`,
       withCredentials: true,
     });
   };

@@ -46,7 +46,6 @@ const Goods = ({
 };
 
 const GoodsSection = styled.section`
-  padding-top: 100px;
   min-width: 1900px;
   min-height: 100vh;
   background-image:
@@ -56,7 +55,6 @@ const GoodsSection = styled.section`
   background-repeat: no-repeat;
   @media(max-width: 430px) {
     min-width: 100%;
-    padding-top: 75px;
   }
 `;
 

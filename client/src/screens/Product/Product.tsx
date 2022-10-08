@@ -57,7 +57,6 @@ const Product = ({
 };
 
 const ProductsSection = styled.section<ProductsSessionProps>`
-  padding-top: 100px;
   min-width: 1900px;
   min-height: 100vh;
   background-image:
@@ -78,14 +77,13 @@ const ProductsSection = styled.section<ProductsSessionProps>`
   }`: ''};
   @media(max-width: 430px) {
     min-width: 100%;
-    padding-top: 75px;
     width: 100%;
   }
 `;
 
 const ProductsWrapper = styled.div`
   margin: auto;
-  width: 60%;
+  max-width: 1140px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

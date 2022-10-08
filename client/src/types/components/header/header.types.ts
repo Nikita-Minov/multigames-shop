@@ -22,3 +22,7 @@ export interface HeaderContainerProps {
   setMenuBar: any;
   menuBar:boolean;
 }
+
+export interface HeaderWrapperProps {
+  menuBar: boolean;
+}

@@ -6,6 +6,7 @@ import {
   DeleteProduct,
   GetProduct,
 } from '../types/api/productsApi.types';
+import {config} from '../config/config';
 /* eslint-enable no-unused-vars */
 
 /* eslint-disable require-jsdoc */
@@ -14,7 +15,7 @@ class ProductsAPI {
   protected readonly instance: AxiosInstance;
   constructor() {
     this.instance = axios.create({
-      baseURL: 'http://localhost:3001/api/v1/',
+      baseURL: `http://${config.ip}/api/v1`,
       withCredentials: true,
     });
   };

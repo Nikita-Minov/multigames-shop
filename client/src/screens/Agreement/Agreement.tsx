@@ -30,7 +30,6 @@ const Agreement = ({agreementPoints}: AgreementProps) => {
 };
 
 const AgreementSection = styled.section`
-  padding-top: 100px;
   min-width: 1900px;
   min-height: 100vh;
   background-image:
@@ -40,7 +39,6 @@ const AgreementSection = styled.section`
   background-repeat: no-repeat;
   @media(max-width: 430px) {
     width: 100%;
-    padding-top: 75px;
   }
 `;
 
