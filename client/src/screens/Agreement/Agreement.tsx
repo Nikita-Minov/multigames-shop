@@ -37,6 +37,12 @@ const AgreementSection = styled.section`
           url(${bg});
   background-size: cover;
   background-repeat: no-repeat;
+  @media(max-width: 1899px) {
+    min-width: 100%;
+  }
+  @media(max-width: 1280px) {
+    min-width: 1900px;
+  }
   @media(max-width: 430px) {
     min-width: 100%;
     width: 100%;
@@ -50,6 +56,15 @@ const AgreementWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media(max-width: 1710px) {
+    transform: scale(0.9);
+  }
+  @media(max-width: 1425px) {
+    transform: scale(0.8) translate(-2%, -10%);
+  }
+  @media(max-width: 1280px) {
+    transform: scale(0.7) translate(-8%, -19%);
+  }
   @media(max-width: 430px) {
     width: 90%;
   }

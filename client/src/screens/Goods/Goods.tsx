@@ -56,6 +56,9 @@ const GoodsSection = styled.section`
   @media(max-width: 1899px) {
     min-width: 100%;
   }
+  @media(max-width: 1280px) {
+    min-width: 1900px;
+  }
   @media(max-width: 430px) {
     min-width: 100%;
   }
@@ -79,6 +82,7 @@ const GoodsWrapper = styled.div`
   }
 
   @media(max-width: 430px) {
+    transform: scale(1) translate(0, 0);
     width: 90%;
   }
 `;
