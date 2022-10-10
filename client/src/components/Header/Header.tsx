@@ -55,6 +55,9 @@ const HeaderWrapper = styled.header<HeaderWrapperProps>`
   min-width: 1900px;
   height: 100px;
   background-color: #1A1C27;
+  @media(max-width: 1899px) {
+    min-width: 100%;
+  }
   @media(max-width: 430px) {
     min-width: 100%;
     width: 100%;
@@ -69,6 +72,10 @@ const HeaderSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media(max-width: 1710px) {
+    transform: scale(0.9);
+  }
+
   @media(max-width: 430px) {
     justify-content: center;
   }

@@ -38,6 +38,7 @@ const AgreementSection = styled.section`
   background-size: cover;
   background-repeat: no-repeat;
   @media(max-width: 430px) {
+    min-width: 100%;
     width: 100%;
   }
 `;
