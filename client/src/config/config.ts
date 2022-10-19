@@ -1,3 +1,3 @@
 export const config = {
-  ip: 'localhost:3001',
+  ip: 'skygames.su',
 };

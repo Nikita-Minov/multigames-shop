@@ -13,7 +13,7 @@ class AgreementsAPI {
   protected readonly instance: AxiosInstance;
   constructor() {
     this.instance = axios.create({
-      baseURL: `http://${config.ip}/api/v1`,
+      baseURL: `https://${config.ip}/api/v1`,
       withCredentials: true,
     });
   };
