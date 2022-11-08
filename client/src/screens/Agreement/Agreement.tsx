@@ -65,7 +65,9 @@ const AgreementWrapper = styled.div`
   @media(max-width: 1280px) {
     transform: scale(0.7) translate(-8%, -19%);
   }
+
   @media(max-width: 430px) {
+    transform: scale(1) translate(0, 0);
     width: 90%;
   }
 `;

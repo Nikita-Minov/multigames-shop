@@ -83,7 +83,6 @@ const ProductsSection = styled.section<ProductsSessionProps>`
   }
   @media(max-width: 430px) {
     min-width: 100%;
-    width: 100%;
   }
 `;
 
@@ -103,8 +102,9 @@ const ProductsWrapper = styled.div`
   @media(max-width: 1280px) {
     transform: scale(0.7) translate(-8%, -19%);
   }
+
   @media(max-width: 430px) {
-    justify-content: start;
+    transform: scale(1) translate(0, 0);
     width: 90%;
   }
 `;
@@ -120,7 +120,7 @@ const OpenedPicture = styled.img`
     cursor: pointer;
   }
   border-radius: 15px;
-  z-index: 3;
+  z-index: 1000;
   @media(max-width: 430px) {
     top: 40%;
     height: 30%;

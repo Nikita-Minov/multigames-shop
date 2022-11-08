@@ -18,7 +18,7 @@ const HeaderContainer = ({setMenuBar, menuBar}: HeaderContainerProps) => {
 
   const socialLinksArray:Array<SocialLink> = [
     {name: 'Техподдержка', url: 'https://vk.com/skygamessu', icon: vk},
-    {name: 'Отзывы', url: 'https://vk.com/topic-216351054_48888651', icon: vk},
+    {name: 'Отзывы', url: 'https://vk.com/topic-187465500_48457072?offset=120', icon: vk},
   ];
 
   const updateLinksArray = (id: number) => {
