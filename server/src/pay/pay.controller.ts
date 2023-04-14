@@ -21,11 +21,9 @@ export class PayController {
   @Post('get-hook')
 	@HttpCode(200)
   async updateOrder(
-    @Body('order_id') orderId,
     @Body() body
   ) {
-    console.log(JSON.stringify(body));
-    return this.payService.updateOrder({orderId});
+    return this.payService.updateOrder(body);
   }
 
   @Post('get-order')

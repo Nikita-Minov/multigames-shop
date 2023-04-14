@@ -50,7 +50,7 @@ export class PayService {
       shopId: 32739,
       nonce: +new Date(),
       ip: res.ip,
-      i: 10,
+      i: 12,
       paymentId: stringId,
       currency: 'RUB',
       success_url: process.env.SUCCESS_URL + stringId,
@@ -80,15 +80,15 @@ export class PayService {
 
   }
 
-  async updateOrder({orderId}: {orderId: string}) {
-    const purchase = await this.purchaseRepository.findOne({where: {orderId}});
+  async updateOrder(body: any) {
+    const purchase = await this.purchaseRepository.findOne({where: {orderId: body.MERCHANT_ORDER_ID}});
     const soldProducts = await this.productService.soldProduct({productId: purchase.productId, amount: purchase.purchaseAmount});
     let arr = [];
     let newArr = arr.concat(soldProducts.soldAccounts);
-    await this.purchaseRepository.update({data: newArr, status: true}, {where: {orderId}});
+    await this.purchaseRepository.update({data: newArr, status: true}, {where: {orderId: body.MERCHANT_ORDER_ID}});
     const date = new Date();
     appendFileSync('./src/log.txt', `\n[${date.getFullYear()}-${date.getMonth()}-${date.getDate()}-${date.getHours()}-${date.getSeconds()}] ${purchase.email} купил ${purchase.purchaseName} за ${purchase.sum}р.`);
-    return {status: 200};
+    return 'YES';
   }
 
   async getOrder({orderId}: {orderId: string}) {
