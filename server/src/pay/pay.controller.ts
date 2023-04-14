@@ -23,6 +23,7 @@ export class PayController {
   async updateOrder(
     @Body() body
   ) {
+    console.log(JSON.stringify(body));
     return this.payService.updateOrder(body);
   }
 
