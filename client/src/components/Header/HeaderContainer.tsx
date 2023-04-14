@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Header from './Header';
 import vk from '../../assets/img/header/vk.svg';
+import tg from '../../assets/img/header/telegram.svg';
 /* eslint-disable no-unused-vars */
 import {
   HeaderContainerProps,
@@ -17,7 +18,7 @@ const HeaderContainer = ({setMenuBar, menuBar}: HeaderContainerProps) => {
   ]);
 
   const socialLinksArray:Array<SocialLink> = [
-    {name: 'Техподдержка', url: 'https://vk.com/skygamessu', icon: vk},
+    {name: 'Техподдержка', url: 'https://t.me/skygamessupport', icon: tg},
     {name: 'Отзывы', url: 'https://vk.com/topic-187465500_48457072?offset=120', icon: vk},
   ];
 

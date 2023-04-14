@@ -1,4 +1,4 @@
-import {Body, Controller, Get, Post, StreamableFile, Response, UseGuards} from '@nestjs/common';
+import {Body, Controller, Get, Post, StreamableFile, Response, UseGuards, HttpCode} from '@nestjs/common';
 import {PayService} from "./pay.service";
 import {createReadStream} from "fs";
 import {join} from 'path';
@@ -19,9 +19,12 @@ export class PayController {
   }
 
   @Post('get-hook')
+	@HttpCode(200)
   async updateOrder(
     @Body('order_id') orderId,
+    @Body() body
   ) {
+    console.log(JSON.stringify(body));
     return this.payService.updateOrder({orderId});
   }
 

@@ -38,6 +38,7 @@ export class ProductService {
 
   async getAllProducts() {
     const products = await this.productRepository.findAll();
+		products.sort((a, b) =>  Date.parse(a.createdAt) - Date.parse(b.createdAt));
     if(!products.length) throw new NotFoundException('Products not found!');
     const mappedProducts = products.map((el) => {
       return {
